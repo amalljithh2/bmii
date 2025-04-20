@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1abc9c, #16a085);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      color: white;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.03);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease;
+    }
+
+    .start-btn {
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 30px;
+      background-color: #ffffff;
+      color: #16a085;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .start-btn:hover {
+      background-color: #f1f1f1;
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome to BMI Calculator</h1>
+    <p>Know your Body Mass Index and stay healthy!</p>
+    <button class="start-btn" onclick="startApp()">Start</button>
+  </div>
+
+  <script>
+    function startApp() {
+      const btn = document.querySelector('.start-btn');
+      btn.textContent = "Loading...";
+      btn.disabled = true;
+      btn.style.transform = "scale(1)";
+      setTimeout(() => {
+        // Redirect to your actual BMI calculator page
+        window.location.href = "frontPage.html"; // <-- change if needed
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
